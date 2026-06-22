@@ -144,7 +144,7 @@ export default function LandingPage() {
           <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">
-                A complete library operating system
+                A complete library AI assistant
               </h2>
               <p className="mt-4 text-lg text-ink-muted">
                 Ditch the legacy systems. Libra brings agentic search and modern interfaces to your existing collection.
@@ -301,7 +301,7 @@ export default function LandingPage() {
                 <span className="font-semibold tracking-tight text-lg">Libra</span>
               </div>
               <p className="text-ink-muted leading-relaxed max-w-sm">
-                A modern operating system for academic, independent, and personal archives.
+                A modern AI assistant for academic, independent, and personal archives.
               </p>
             </div>
             
