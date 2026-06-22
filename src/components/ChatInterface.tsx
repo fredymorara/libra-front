@@ -3,6 +3,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Bot, User, Send, Loader2, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ChatInterfaceProps {
   readonly isEmbedded?: boolean;
@@ -154,7 +156,13 @@ export default function ChatInterface({ isEmbedded = false }: ChatInterfaceProps
                     : 'bg-white border border-stone-200 text-ink rounded-tl-sm'
                 }`}>
                   {m.content ? (
-                    <p className="whitespace-pre-wrap">{m.content}</p>
+                    m.role === 'assistant' ? (
+                      <div className="prose prose-sm prose-stone max-w-none prose-p:leading-relaxed prose-pre:bg-stone-100 prose-pre:text-stone-800 prose-a:text-library-600 prose-a:no-underline hover:prose-a:underline">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
+                      </div>
+                    ) : (
+                      <p className="whitespace-pre-wrap">{m.content}</p>
+                    )
                   ) : (
                     <div className="flex items-center gap-1.5 h-6 opacity-70">
                       <motion.div 
